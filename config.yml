@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: USERNAME-ANDA/NAMA-REPOSITORY-ANDA # Gantilah bagian ini!
+  branch: main # Ubah ke 'master' jika branch Anda dinamai master
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog/Artikel"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul Artikel", name: "title", widget: "string" }
+      - { label: "Tanggal Publikasi", name: "date", widget: "datetime" }
+      - { label: "Gambar Sampul", name: "thumbnail", widget: "image", required: false }
+      - { label: "Isi Konten", name: "body", widget: "markdown" }
